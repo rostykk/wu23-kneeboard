@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <CruisingAlt>1500</CruisingAlt>
+      <Comment>Латвія — усі точки WU23. Юрмала EVJA → Рига EVRA, ~388 NM, ~2 год 09 хв при 180 kt. VFR, висоти точок розраховані за рельєфом (+1000 ft над найвищою місцевістю поруч і вздовж наступного відрізка). Ан-28 у MSFS без автопілота — політ ручний. Ризька телевежа (368 м) — перешкода; поруч не нижче 2500 ft. Можлива посадка в Лієпаї EVLA. Координати POI — з пакета сценарію WU23.</Comment>
+      <CreationDate>2026-11-03T18:40:00+01:00</CreationDate>
+      <FileVersion>1.2</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>3.0.17</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS24</SimData>
+    <NavData>MSFS24</NavData>
+    <Waypoints>
+      <Waypoint>
+        <Name>Jūrmala Airport</Name>
+        <Ident>EVJA</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Старт. Аеродром Юрмала біля Тукумса — база пілотажної групи Baltic Bees, вручну деталізований Gaya для WU23.</Comment>
+        <Pos Lon="23.223889" Lat="56.942500" Alt="98.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kolka Lighthouse</Name>
+        <Ident>KOLKA</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк Колка на штучному острові біля мису Колка, де Ризька затока зустрічається з Балтикою.</Comment>
+        <Pos Lon="22.633977" Lat="57.802288" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Užava Lighthouse</Name>
+        <Ident>UZAVA</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк Ужава на високому піщаному березі Курземе серед соснового лісу.</Comment>
+        <Pos Lon="21.414841" Lat="57.209100" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Ēdole Castle</Name>
+        <Ident>EDOLE</Ident>
+        <Type>USER</Type>
+        <Comment>Замок Едоле в Курземе — середньовічна основа, перебудована в неоготичному стилі у XIX ст.</Comment>
+        <Pos Lon="21.696953" Lat="57.017624" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Lost Mariners Monument (Liepāja)</Name>
+        <Ident>LIEPA</Ident>
+        <Type>USER</Type>
+        <Comment>Пам'ятник загиблим морякам і рибалкам на пляжі Лієпаї.</Comment>
+        <Pos Lon="20.991469" Lat="56.509379" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Rundāle Palace</Name>
+        <Ident>RUNDL</Ident>
+        <Type>USER</Type>
+        <Comment>Бароковий палац Рундале архітектора Растреллі (XVIII ст.) з французьким парком.</Comment>
+        <Pos Lon="24.024449" Lat="56.413008" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Bauska Castle</Name>
+        <Ident>BAUSK</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни Лівонського замку й палац герцогів Курляндії на мисі при злитті Мемеле та Мусси.</Comment>
+        <Pos Lon="24.174537" Lat="56.403438" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Koknese Castle Ruins</Name>
+        <Ident>KOKNE</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни замку XIII ст. над Даугавою; після будівництва Плявіньської ГЕС вода підступила до самих мурів.</Comment>
+        <Pos Lon="25.417340" Lat="56.637977" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Turaida Castle</Name>
+        <Ident>TURAI</Ident>
+        <Type>USER</Type>
+        <Comment>Червоний цегляний замок Турайда над долиною Гауї в Сігулді.</Comment>
+        <Pos Lon="24.850085" Lat="57.182769" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Krimulda Castle</Name>
+        <Ident>KRIMU</Ident>
+        <Type>USER</Type>
+        <Comment>Садиба й руїни замку Кримулда на протилежному від Турайди березі Гауї; між ними — канатна дорога.</Comment>
+        <Pos Lon="24.828041" Lat="57.168337" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Riga Hydroelectric Power Plant</Name>
+        <Ident>RIGHE</Ident>
+        <Type>USER</Type>
+        <Comment>Ризька ГЕС на Даугаві біля Саласпілса — найнижча на каскаді ріки.</Comment>
+        <Pos Lon="24.269697" Lat="56.849724" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Riga Radio and TV Tower</Name>
+        <Ident>RIGTV</Ident>
+        <Type>USER</Type>
+        <Comment>Ризька радіо- і телевежа на острові Закюсала — 368,5 м, найвища споруда Балтії. ПЕРЕШКОДА: поруч не нижче 2500 ft.</Comment>
+        <Pos Lon="24.136679" Lat="56.924590" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Riga PG</Name>
+        <Ident>RIGPG</Ident>
+        <Type>USER</Type>
+        <Comment>Рига, фотограмметрія WU23 (FSPG 10/10): Старе місто, широка Даугава, мости.</Comment>
+        <Pos Lon="24.105890" Lat="56.946000" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Riga International</Name>
+        <Ident>EVRA</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Фініш. Міжнародний аеропорт Риги.</Comment>
+        <Pos Lon="23.971111" Lat="56.923611" Alt="36.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap>

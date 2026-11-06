@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <CruisingAlt>2000</CruisingAlt>
+      <Comment>Польща 1 — Балтійське узбережжя, Вармія й Підляшшя. Щецин EPSC → Варшава-Бабіце EPBC, ~528 NM, ~2 год 56 хв при 180 kt. VFR, висоти точок розраховані за рельєфом (+1000 ft над найвищою місцевістю поруч і вздовж наступного відрізка). Ан-28 у MSFS без автопілота — політ ручний. Ділянка Ольштин → Станчики → Білосток проходить за кілька кілометрів від кордону з Калінінградською областю — тримайтеся південніше. Можлива посадка в Гданську EPGD. Координати POI — з пакета сценарію WU23.</Comment>
+      <CreationDate>2026-11-03T18:40:00+01:00</CreationDate>
+      <FileVersion>1.2</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>3.0.17</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS24</SimData>
+    <NavData>MSFS24</NavData>
+    <Waypoints>
+      <Waypoint>
+        <Name>Szczecin-Goleniów</Name>
+        <Ident>EPSC</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Старт. Аеропорт Щецин-Голенюв на заході Польщі; звідси до узбережжя Балтики ~25 NM.</Comment>
+        <Pos Lon="14.902222" Lat="53.584722" Alt="154.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Niechorze Lighthouse</Name>
+        <Ident>NIECH</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк Нехоже (1866), ~45 м, на клифі над Балтикою.</Comment>
+        <Pos Lon="15.063635" Lat="54.094892" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Stilo Lighthouse</Name>
+        <Ident>STILO</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк Стило серед лісистих дюн між Лебою та Устькою; поруч Словінський нацпарк з рухомими дюнами.</Comment>
+        <Pos Lon="17.734005" Lat="54.786907" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Torpedo Factory (Babie Doły)</Name>
+        <Ident>TORPE</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни німецької торпедної станції часів Другої світової, що стоїть просто в морі біля Гдині.</Comment>
+        <Pos Lon="18.545647" Lat="54.588382" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Sopot Pier</Name>
+        <Ident>SOPOT</Ident>
+        <Type>USER</Type>
+        <Comment>Сопотський мол — найдовший дерев'яний пірс Європи (511 м).</Comment>
+        <Pos Lon="18.570662" Lat="54.446878" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Gdańsk PG</Name>
+        <Ident>GDANS</Ident>
+        <Type>USER</Type>
+        <Comment>Гданськ, фотограмметрія WU23 (FSPG 10/10 Gold Standard): ганзейське Старе місто, верфі, порт із кранами й кораблями.</Comment>
+        <Pos Lon="18.646600" Lat="54.352000" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Malbork Castle</Name>
+        <Ident>MALBK</Ident>
+        <Type>USER</Type>
+        <Comment>Замок Тевтонського ордену в Мальборку над Ногатом — найбільший цегляний замок світу, ЮНЕСКО.</Comment>
+        <Pos Lon="19.030563" Lat="54.041342" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Frombork Cathedral</Name>
+        <Ident>FROMB</Ident>
+        <Type>USER</Type>
+        <Comment>Готичний собор на пагорбі над Віслинською затокою; тут працював і похований Миколай Коперник. Калінінградська область — лише за кілька кілометрів на північний схід.</Comment>
+        <Pos Lon="19.682604" Lat="54.357081" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Urania Hall (Olsztyn)</Name>
+        <Ident>URANI</Ident>
+        <Type>USER</Type>
+        <Comment>Спортивно-видовищна зала «Уранія» з куполом в Ольштині, серед озер Вармії.</Comment>
+        <Pos Lon="20.494986" Lat="53.772715" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Stańczyki Viaducts</Name>
+        <Ident>STANC</Ident>
+        <Type>USER</Type>
+        <Comment>Два залізничні віадуки ~36 м заввишки над долиною Блудзі — «мазурські акведуки». УВАГА: кордон з Калінінградською областю за кілька кілометрів на північ.</Comment>
+        <Pos Lon="22.656790" Lat="54.296591" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Branicki Palace (Białystok)</Name>
+        <Ident>BRANI</Ident>
+        <Type>USER</Type>
+        <Comment>Палац Браницьких у Білостоці (XVIII ст.) з регулярним парком — його називають «Подляським Версалем».</Comment>
+        <Pos Lon="23.164091" Lat="53.130284" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Warsaw-Babice</Name>
+        <Ident>EPBC</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Варшава-Бабіце — міський аеродром, вручну деталізований Gaya для WU23.</Comment>
+        <Pos Lon="20.907222" Lat="52.269167" Alt="352.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap>

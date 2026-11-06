@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <CruisingAlt>3000</CruisingAlt>
+      <Comment>Польща 3 — Сілезія, Мала Польща, Татри й Бещади. Ополе EPKN → Ряшів EPRZ, ~455 NM, ~2 год 31 хв при 180 kt. VFR, висоти точок розраховані за рельєфом (+1000 ft над найвищою місцевістю поруч і вздовж наступного відрізка). Ан-28 у MSFS без автопілота — політ ручний. Татри: Каспровий Верх 1987 м, поруч хребти до 2600 м у Словаччині — над Закопаним тримайте 7500 ft і стежте за погодою. Біля Аушвіца — без низьких проходів. Можлива посадка в Кракові EPKK. Координати POI — з пакета сценарію WU23.</Comment>
+      <CreationDate>2026-11-03T18:40:00+01:00</CreationDate>
+      <FileVersion>1.2</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>3.0.17</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS24</SimData>
+    <NavData>MSFS24</NavData>
+    <Waypoints>
+      <Waypoint>
+        <Name>Opole-Kamień Śląski</Name>
+        <Ident>EPKN</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Ополе-Камінь Шльонський — колишній військовий аеродром біля автодрому Silesia Ring, вручну деталізований Gaya для WU23.</Comment>
+        <Pos Lon="18.085278" Lat="50.529167" Alt="600.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Jasna Góra – Black Madonna (Częstochowa)</Name>
+        <Ident>JASNA</Ident>
+        <Type>USER</Type>
+        <Comment>Монастир Ясна Гура в Ченстохові з іконою Чорної Мадонни — головна святиня Польщі; висока дзвіниця — добрий орієнтир.</Comment>
+        <Pos Lon="19.097314" Lat="50.812520" Alt="3000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Ogrodzieniec Castle</Name>
+        <Ident>OGROD</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни замку на Шляху орлиних гнізд серед вапнякових скель Краківсько-Ченстоховської юри.</Comment>
+        <Pos Lon="19.552363" Lat="50.453104" Alt="3000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Sławków Town Hall</Name>
+        <Ident>SLAWK</Ident>
+        <Type>USER</Type>
+        <Comment>Ратуша на ринку старовинного містечка Славкув на краю Сілезької агломерації.</Comment>
+        <Pos Lon="19.388376" Lat="50.298370" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Silesian Planetarium (Chorzów)</Name>
+        <Ident>PLANE</Ident>
+        <Type>USER</Type>
+        <Comment>Сілезький планетарій у Хожуві (1955) посеред великого Сілезького парку.</Comment>
+        <Pos Lon="18.992737" Lat="50.290707" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Katowice PG</Name>
+        <Ident>KATOW</Ident>
+        <Type>USER</Type>
+        <Comment>Катовіце, фотограмметрія WU23 (FSPG 10/10): шахтарська спадщина й сучасний центр, поруч Хожув.</Comment>
+        <Pos Lon="19.023800" Lat="50.264900" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Auschwitz-Birkenau Memorial</Name>
+        <Ident>AUSCH</Ident>
+        <Type>USER</Type>
+        <Comment>Колишній німецький нацистський концтабір Аушвіц-Біркенау, нині музей-меморіал ЮНЕСКО. Місце пам'яті — пролітайте спокійно й без низьких проходів.</Comment>
+        <Pos Lon="19.173236" Lat="50.036499" Alt="5500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Museum of Zakopane Style</Name>
+        <Ident>ZAKMU</Ident>
+        <Type>USER</Type>
+        <Comment>Музей закопанського стилю на віллі «Коліба» — перша будівля цього стилю. Закопане лежить під самими Татрами.</Comment>
+        <Pos Lon="19.943084" Lat="49.294664" Alt="7500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Wielka Krokiew Ski Jump</Name>
+        <Ident>KROKW</Ident>
+        <Type>USER</Type>
+        <Comment>Трамплін Велика Кроків у Закопаному — арена етапів Кубка світу зі стрибків на лижах.</Comment>
+        <Pos Lon="19.963970" Lat="49.279712" Alt="8000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kasprowy Wierch</Name>
+        <Ident>KASPR</Ident>
+        <Type>USER</Type>
+        <Comment>Вершина Каспровий Верх (1987 м) у Татрах з канатною дорогою та метеостанцією; по хребту — кордон зі Словаччиною. Тримайте не нижче 7500 ft.</Comment>
+        <Pos Lon="19.982235" Lat="49.245805" Alt="8000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Niedzica Castle</Name>
+        <Ident>NIEDZ</Ident>
+        <Type>USER</Type>
+        <Comment>Замок Дунаєць у Недзиці (XIV ст.) над Чорштинським водосховищем; навпроти — руїни замку Чорштин.</Comment>
+        <Pos Lon="20.319734" Lat="49.422833" Alt="5000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kraków PG</Name>
+        <Ident>KRAKO</Ident>
+        <Type>USER</Type>
+        <Comment>Краків, фотограмметрія WU23 (FSPG 10/10): Вавель, Ринок, Вісла; ТЕС і ставки на околицях.</Comment>
+        <Pos Lon="19.945000" Lat="50.064700" Alt="3000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Hercules' Club (Maczuga Herkulesa)</Name>
+        <Ident>MACZG</Ident>
+        <Type>USER</Type>
+        <Comment>Мачуга Геркулеса — вапняковий скельний стовп ~25 м біля замку Пєскова Скала в Ойцовському нацпарку. Шукайте замок на скелі над долиною Прондника.</Comment>
+        <Pos Lon="19.780364" Lat="50.244199" Alt="3000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Chęciny Castle</Name>
+        <Ident>CHECI</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни королівського замку XIII–XIV ст. на вапняковому пагорбі над Хенцинами; дві вежі видно здалеку.</Comment>
+        <Pos Lon="20.460535" Lat="50.797281" Alt="3000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Łysa Góra TV Tower</Name>
+        <Ident>LYSAG</Ident>
+        <Type>USER</Type>
+        <Comment>Телевежа на Лисій Горі (595 м) у Свентокшиських горах; поруч монастир Святий Хрест.</Comment>
+        <Pos Lon="21.048845" Lat="50.860064" Alt="3000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Krzyżtopór Castle (Ujazd)</Name>
+        <Ident>KRZYZ</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни величезного замку-палацу XVII ст. в Уязді; за легендою, мав стільки вікон, скільки днів у році.</Comment>
+        <Pos Lon="21.310303" Lat="50.714111" Alt="3500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Solina Dam</Name>
+        <Ident>SOLIN</Ident>
+        <Type>USER</Type>
+        <Comment>Дамба Соліна (~82 м) — найвища в Польщі; утворює найбільше водосховище країни серед Бещад. Фінальна точка перед Ряшевом.</Comment>
+        <Pos Lon="22.453182" Lat="49.395056" Alt="3500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Rzeszów-Jasionka</Name>
+        <Ident>EPRZ</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Фініш. Міжнародний аеропорт Ряшів-Ясьонка.</Comment>
+        <Pos Lon="22.019000" Lat="50.109958" Alt="692.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmperf.xsd">
+  <AircraftPerf>
+    <Header>
+      <CreationDate>2026-11-03T12:00:00</CreationDate>
+      <FileVersion>1.0</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>3.0.17</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmperf.html</Documentation>
+    </Header>
+    <Options>
+      <Name>An-28 ATSimulations (Local Legend)</Name>
+      <AircraftType>AN28</AircraftType>
+      <Simulator>MSFS</Simulator>
+      <Description>Профіль за РЛЕ Ан-28 (1985), розділ 7 і табл. 4.1, маса 6000–6400 кг, СА, 2 x ТВД-10Б.
+
+Паливо — за масою (фунти), ТС-1 (jet). Повна заправка 1520 кг = 3351 lb.
+Набір: Vy 3,5 м/с на номіналі (рис. 7.29), 190–200 км/год IAS, витрата ≈ 408 кг/год.
+Крейсер: режим найбільшої крейсерської потужності на 2400 м (табл. 4.1): 337 км/год TAS, 376 кг/год.
+  Альтернативи з тієї ж таблиці: номінал 352 км/год / 406 кг/год; макс. дальність 307 км/год / 305 кг/год.
+Зниження: Vy 3,0 м/с, 295 км/год (рис. 7.37), витрата ≈ 316 кг/год.
+Запасний: режим макс. дальності на 1200 м: 300 км/год, 335 кг/год.
+Резерв: АНЗ 250 кг. Руління і запуск: 30–35 кг (рис. 7.35).
+Мін. ВПП: 700 м (вимога РЛЕ для вильоту без інтерцепторів; злітна дистанція 370 м при 6500 кг, СА).
+
+Для MSFS 2024, не для реального літака.</Description>
+      <FuelAsVolume>0</FuelAsVolume>
+      <JetFuel>1</JetFuel>
+    </Options>
+    <Perf>
+      <ContingencyFuelPercent>5.0</ContingencyFuelPercent>
+      <ExtraFuelLbsGal>0.000</ExtraFuelLbsGal>
+      <MinRunwayLengthFt>2300.000</MinRunwayLengthFt>
+      <ReserveFuelLbsGal>551.000</ReserveFuelLbsGal>
+      <RunwayType>SOFT</RunwayType>
+      <TaxiFuelLbsGal>75.000</TaxiFuelLbsGal>
+      <UsableFuelLbsGal>3351.000</UsableFuelLbsGal>
+      <Alternate>
+        <FuelFlowLbsGalPerHour>739.000</FuelFlowLbsGalPerHour>
+        <SpeedKtsTAS>162.000</SpeedKtsTAS>
+      </Alternate>
+      <Climb>
+        <FuelFlowLbsGalPerHour>900.000</FuelFlowLbsGalPerHour>
+        <SpeedKtsTAS>110.000</SpeedKtsTAS>
+        <VertSpeedFtPerMin>690.000</VertSpeedFtPerMin>
+      </Climb>
+      <Cruise>
+        <FuelFlowLbsGalPerHour>829.000</FuelFlowLbsGalPerHour>
+        <SpeedKtsTAS>182.000</SpeedKtsTAS>
+      </Cruise>
+      <Descent>
+        <FuelFlowLbsGalPerHour>697.000</FuelFlowLbsGalPerHour>
+        <SpeedKtsTAS>159.000</SpeedKtsTAS>
+        <VertSpeedFtPerMin>590.000</VertSpeedFtPerMin>
+      </Descent>
+    </Perf>
+  </AircraftPerf>
+</LittleNavmap>

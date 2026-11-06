@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <CruisingAlt>2500</CruisingAlt>
+      <Comment>Польща 2 — Мазовія, Великопольща й Нижня Сілезія. Варшава-Бабіце EPBC → Ополе EPKN, ~491 NM, ~2 год 43 хв при 180 kt. VFR, висоти точок розраховані за рельєфом (+1000 ft над найвищою місцевістю поруч і вздовж наступного відрізка). Ан-28 у MSFS без автопілота — політ ручний. Над Карконошами (Хойнік, Карпач) рельєф до 1600 м — висоти точок враховують це. Можлива посадка у Вроцлаві EPWR або Познані EPPO. Координати POI — з пакета сценарію WU23.</Comment>
+      <CreationDate>2026-11-03T18:40:00+01:00</CreationDate>
+      <FileVersion>1.2</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>3.0.17</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS24</SimData>
+    <NavData>MSFS24</NavData>
+    <Waypoints>
+      <Waypoint>
+        <Name>Warsaw-Babice</Name>
+        <Ident>EPBC</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Варшава-Бабіце — міський аеродром, вручну деталізований Gaya для WU23.</Comment>
+        <Pos Lon="20.907222" Lat="52.269167" Alt="352.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Poniatowski Bridge (Warsaw)</Name>
+        <Ident>PONIA</Ident>
+        <Type>USER</Type>
+        <Comment>Міст Понятовського через Віслу (1914) з вежами на в'їздах; поруч Національний стадіон.</Comment>
+        <Pos Lon="21.038545" Lat="52.237770" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Warsaw PG</Name>
+        <Ident>WARSA</Ident>
+        <Type>USER</Type>
+        <Comment>Варшава, фотограмметрія WU23 (FSPG 10/10 Gold Standard): хмарочоси центру, Старе місто, Вісла. Частина кварталів у PG розмита.</Comment>
+        <Pos Lon="21.012200" Lat="52.229700" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Solidarity Bridge (Płock)</Name>
+        <Ident>PLOCK</Ident>
+        <Type>USER</Type>
+        <Comment>Вантовий міст Солідарності через Віслу в Плоцьку (2007); на високому березі — собор і Тумське узгір'я.</Comment>
+        <Pos Lon="19.731101" Lat="52.523934" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Łódź PG</Name>
+        <Ident>LODZ</Ident>
+        <Type>USER</Type>
+        <Comment>Лодзь, фотограмметрія WU23 (FSPG 10/10): старі текстильні фабрики та промислові квартали.</Comment>
+        <Pos Lon="19.455900" Lat="51.759200" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Licheń Basilica (Sanctuary of Our Lady)</Name>
+        <Ident>LICHN</Ident>
+        <Type>USER</Type>
+        <Comment>Базиліка в Ліхені — найбільший храм Польщі: золотий купол і вежа ~141 м видно за десятки кілометрів.</Comment>
+        <Pos Lon="18.357275" Lat="52.322009" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Gniezno Cathedral</Name>
+        <Ident>GNIEZ</Ident>
+        <Type>USER</Type>
+        <Comment>Гнєзненський собор — місце коронацій перших королів; Гнезно вважають першою столицею Польщі.</Comment>
+        <Pos Lon="17.593211" Lat="52.537210" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Poznań PG</Name>
+        <Ident>POZNA</Ident>
+        <Type>USER</Type>
+        <Comment>Познань, фотограмметрія WU23 (FSPG 10/10): історичний центр і Варта.</Comment>
+        <Pos Lon="16.925200" Lat="52.406400" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Christ the King Statue (Świebodzin)</Name>
+        <Ident>SWIEB</Ident>
+        <Type>USER</Type>
+        <Comment>Статуя Христа Царя у Свебодзіні (2010): 33 м плюс корона — одна з найвищих статуй Христа у світі.</Comment>
+        <Pos Lon="15.546614" Lat="52.236560" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Zatonie Palace Ruins</Name>
+        <Ident>ZATON</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни палацу в Затоню біля Зеленої Гури з ландшафтним парком.</Comment>
+        <Pos Lon="15.562876" Lat="51.860057" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Grodziec Castle</Name>
+        <Ident>GRODZ</Ident>
+        <Type>USER</Type>
+        <Comment>Замок Гродзець на базальтовому пагорбі (згаслий вулкан) біля Злоторії, Нижня Сілезія.</Comment>
+        <Pos Lon="15.759408" Lat="51.176994" Alt="3500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Chojnik Castle</Name>
+        <Ident>CHOJN</Ident>
+        <Type>USER</Type>
+        <Comment>Руїни замку XIV ст. на скелястій вершині над Собешувом, біля підніжжя Карконошів.</Comment>
+        <Pos Lon="15.644122" Lat="50.833898" Alt="6000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Vang Stave Church (Karpacz)</Name>
+        <Ident>VANG</Ident>
+        <Type>USER</Type>
+        <Comment>Норвезька каркасна церква Ванг (XII–XIII ст.), перенесена в Карпач у 1842 р.; над нею — Снєжка.</Comment>
+        <Pos Lon="15.723901" Lat="50.777544" Alt="6000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Książ Castle</Name>
+        <Ident>KSIAZ</Ident>
+        <Type>USER</Type>
+        <Comment>Замок Ксьонж у Валбжиху — третій за величиною в Польщі, з терасовими садами над лісистою ущелиною.</Comment>
+        <Pos Lon="16.292684" Lat="50.841918" Alt="4500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Srebrna Góra Fortress</Name>
+        <Ident>SREBR</Ident>
+        <Type>USER</Type>
+        <Comment>Гірська фортеця XVIII ст. на перевалі в Совиних горах — одна з найбільших у Європі.</Comment>
+        <Pos Lon="16.642576" Lat="50.573957" Alt="4000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Rędziński Bridge (Wrocław)</Name>
+        <Ident>REDZI</Ident>
+        <Type>USER</Type>
+        <Comment>Вантовий Рендзінський міст на обхідній Вроцлава — найдовший такий міст Польщі, з високим бетонним пілоном.</Comment>
+        <Pos Lon="16.960017" Lat="51.157588" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Wrocław PG</Name>
+        <Ident>WROCL</Ident>
+        <Type>USER</Type>
+        <Comment>Вроцлав, фотограмметрія WU23 (FSPG 10/10): острови й мости на Одрі, Старе місто.</Comment>
+        <Pos Lon="17.038500" Lat="51.107900" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Opole-Kamień Śląski</Name>
+        <Ident>EPKN</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Ополе-Камінь Шльонський — колишній військовий аеродром біля автодрому Silesia Ring, вручну деталізований Gaya для WU23.</Comment>
+        <Pos Lon="18.085278" Lat="50.529167" Alt="600.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <CruisingAlt>1500</CruisingAlt>
+      <Comment>Естонія — усі точки WU23. Кярдла EEKA → Таллінн EETN, ~504 NM, ~2 год 48 хв при 180 kt. VFR, висоти точок розраховані за рельєфом (+1000 ft над найвищою місцевістю поруч і вздовж наступного відрізка). Ан-28 у MSFS без автопілота — політ ручний. Кордон з Росією: Чудське озеро й річка Нарва — оглядайте Нарву із заходу. Переліт Сирве → Рухну проходить над Ризькою затокою. Можлива посадка в Тарту EETU. Координати POI — з пакета сценарію WU23.</Comment>
+      <CreationDate>2026-11-03T18:40:00+01:00</CreationDate>
+      <FileVersion>1.2</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>3.0.17</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS24</SimData>
+    <NavData>MSFS24</NavData>
+    <Waypoints>
+      <Waypoint>
+        <Name>Kärdla Airport</Name>
+        <Ident>EEKA</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Старт. Острівний аеропорт Кярдла на Гіюмаа, вручну деталізований Gaya для WU23.</Comment>
+        <Pos Lon="22.830833" Lat="58.990833" Alt="18.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kõpu Lighthouse</Name>
+        <Ident>KOPU</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк Кипу на Гіюмаа (1531) — один із найстаріших діючих маяків світу.</Comment>
+        <Pos Lon="22.199974" Lat="58.916129" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Angla Windmill Park</Name>
+        <Ident>ANGLA</Ident>
+        <Type>USER</Type>
+        <Comment>П'ять вітряків Англа на Сааремаа — найвідоміший вітряний пагорб Естонії.</Comment>
+        <Pos Lon="22.700691" Lat="58.526013" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kuressaare Castle</Name>
+        <Ident>KURES</Ident>
+        <Type>USER</Type>
+        <Comment>Єпископський замок Курессааре (XIV ст.) з ровами й бастіонами — найкраще збережений середньовічний замок Балтії.</Comment>
+        <Pos Lon="22.476938" Lat="58.246676" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Sõrve Lighthouse</Name>
+        <Ident>SORVE</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк Сирве на краю півострова Сирве над Ірбенською протокою; далі — переліт до Рухну над Ризькою затокою.</Comment>
+        <Pos Lon="22.055558" Lat="57.910879" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Ruhnu Wooden Church</Name>
+        <Ident>RUHNU</Ident>
+        <Type>USER</Type>
+        <Comment>Дерев'яна церква на острові Рухну (1644) — найстаріша дерев'яна будівля Естонії. На острові є летовище.</Comment>
+        <Pos Lon="23.244698" Lat="57.806297" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Suur Munamägi Tower</Name>
+        <Ident>MUNAM</Ident>
+        <Type>USER</Type>
+        <Comment>Суур Мунамягі (318 м) — найвища точка Балтійських країн, з оглядовою вежею. Кордон з Росією за ~20 км на схід.</Comment>
+        <Pos Lon="27.055596" Lat="57.715132" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Roosisaare Bridge (Võru)</Name>
+        <Ident>VORU</Ident>
+        <Type>USER</Type>
+        <Comment>Міст біля Виру серед озер і пагорбів Південної Естонії.</Comment>
+        <Pos Lon="26.980792" Lat="57.846541" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Snail Tower (Tartu)</Name>
+        <Ident>TARTU</Ident>
+        <Type>USER</Type>
+        <Comment>«Вежа-равлик» (Tigutorn) у Тарту — житлова вежа з закрученим силуетом. Поруч EETU, якщо потрібна посадка.</Comment>
+        <Pos Lon="26.735183" Lat="58.376648" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Alatskivi Castle</Name>
+        <Ident>ALATS</Ident>
+        <Type>USER</Type>
+        <Comment>Неоготичний замок Алатсківі (XIX ст.), натхненний шотландським Балморалом. Чудське озеро поруч — кордон з Росією проходить посеред озера, не летіть над ним на схід.</Comment>
+        <Pos Lon="27.129806" Lat="58.603842" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Pühtitsa Convent (Kuremäe)</Name>
+        <Ident>PUHTI</Ident>
+        <Type>USER</Type>
+        <Comment>Пюхтицький Успенський жіночий монастир у Куремяе (засн. 1891).</Comment>
+        <Pos Lon="27.536543" Lat="59.199426" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Narva bypass 1</Name>
+        <Ident>NRVW1</Ident>
+        <Type>USER</Type>
+        <Comment>Точка обходу: тримає маршрут на північ від Нарвського водосховища, більша частина якого — територія Росії.</Comment>
+        <Pos Lon="28.010000" Lat="59.370000" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Hermann Castle (Narva)</Name>
+        <Ident>NARVA</Ident>
+        <Type>USER</Type>
+        <Comment>Точка огляду ~3 NM на захід від замку Германа в Нарві; навпроти — фортеця Івангород. Кордон з Росією — річка Нарва, за ~1,5 NM на схід: далі на схід не летіть.</Comment>
+        <Pos Lon="28.105380" Lat="59.375469" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Narva bypass 2</Name>
+        <Ident>NRVW2</Ident>
+        <Type>USER</Type>
+        <Comment>Та сама точка обходу на зворотному шляху від Нарви; далі — на захід до Кільтсі.</Comment>
+        <Pos Lon="28.010000" Lat="59.370000" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kiltsi Castle</Name>
+        <Ident>KILTS</Ident>
+        <Type>USER</Type>
+        <Comment>Мизa Кільтсі (Ляене-Вірумаа), збудована на основі середньовічного замку.</Comment>
+        <Pos Lon="26.194561" Lat="59.077476" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Keri Lighthouse</Name>
+        <Ident>KERI</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк на крихітному острові Кері у Фінській затоці.</Comment>
+        <Pos Lon="25.022078" Lat="59.698833" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Tallinn TV Tower</Name>
+        <Ident>TLLTV</Ident>
+        <Type>USER</Type>
+        <Comment>Таллінська телевежа — 314 м, найвища споруда Естонії. ПЕРЕШКОДА: поруч не нижче 2500 ft.</Comment>
+        <Pos Lon="24.887512" Lat="59.470886" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kadriorg Palace</Name>
+        <Ident>KADRI</Ident>
+        <Type>USER</Type>
+        <Comment>Палац Кадріорг (1718–1725), збудований для Катерини I, з великим парком над морем.</Comment>
+        <Pos Lon="24.791551" Lat="59.438487" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Tallinn PG</Name>
+        <Ident>TLLPG</Ident>
+        <Type>USER</Type>
+        <Comment>Таллінн, фотограмметрія WU23 (FSPG 10/10): середньовічне Старе місто й узбережжя Фінської затоки.</Comment>
+        <Pos Lon="24.753530" Lat="59.436960" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Tallinn Airport</Name>
+        <Ident>EETN</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Фініш. Аеропорт Таллінна (Lennart Meri).</Comment>
+        <Pos Lon="24.832844" Lat="59.413317" Alt="131.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap>

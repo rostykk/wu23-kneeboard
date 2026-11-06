@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LittleNavmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://www.littlenavmap.org/schema/lnmpln.xsd">
+  <Flightplan>
+    <Header>
+      <FlightplanType>VFR</FlightplanType>
+      <CruisingAlt>2500</CruisingAlt>
+      <Comment>Обліт усіх точок WU23 у Литві на An-28 (Local Legend 26): 15 офіційних POI + фотограмметрія Каунаса та Вільнюса. Паланга EYPA → Вільнюс EYVI, ~470 NM, ~2 год 37 хв при 180 kt. VFR, ешелон 2500 ft MSL, над точками 1500–2000 ft. An-28 у MSFS не має автопілота – увесь політ ручний; за бажанням зробіть посадку в Каунасі EYKA після точки KAUNS (етапи ~180 + ~290 NM). Координати POI взяті з пакета сценарію microsoft-baltic-point-of-interest. Тримайтеся подалі від кордону з Білоруссю (Друскінінкай, Салакас) та Калінінградською областю (південь Нямунаса; точка KLNBP тримає маршрут на відстані ≥3 NM).</Comment>
+      <CreationDate>2026-11-03T17:20:00+01:00</CreationDate>
+      <FileVersion>1.2</FileVersion>
+      <ProgramName>Little Navmap</ProgramName>
+      <ProgramVersion>3.0.17</ProgramVersion>
+      <Documentation>https://www.littlenavmap.org/lnmpln.html</Documentation>
+    </Header>
+    <SimData>MSFS24</SimData>
+    <NavData>MSFS24</NavData>
+    <Waypoints>
+      <Waypoint>
+        <Name>Palanga International</Name>
+        <Ident>EYPA</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Старт. Аеропорт Паланги на узбережжі Балтики, вручну деталізований Gaya спеціально для WU23. Після зльоту курс на північ – вітряк Лаздинінкай лише за 4,6 NM.</Comment>
+        <Pos Lon="21.093889" Lat="55.973056" Alt="33.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Lazdininkai Windmill</Name>
+        <Ident>LAZDN</Ident>
+        <Type>USER</Type>
+        <Comment>Лаздинінкайський вітряк (Кретингський р-н) – традиційний дерев'яний вітряк серед жмудських полів. Офіційний POI WU23. Порада: пройдіть низько, ~1000 ft AGL, і розверніться на південь уздовж берега.</Comment>
+        <Pos Lon="21.216126" Lat="56.006818" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Ventė Cape Lighthouse</Name>
+        <Ident>VENTE</Ident>
+        <Type>USER</Type>
+        <Comment>Маяк на мисі Венте (1863) у Регіональному парку дельти Нямунаса, на березі Куршської затоки. Тут з 1929 р. працює орнітологічна станція кільцювання птахів. На захід через затоку видно дюни Куршської коси. Далі – уздовж Нямунаса на схід.</Comment>
+        <Pos Lon="21.189950" Lat="55.340879" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kaliningrad bypass</Name>
+        <Ident>KLNBP</Ident>
+        <Type>USER</Type>
+        <Comment>Точка обходу: тримає маршрут не ближче 3 NM від Калінінградської області (південний берег Нямунаса).</Comment>
+        <Pos Lon="21.740000" Lat="55.345000" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Jurbarkas Bridge</Name>
+        <Ident>JURBR</Ident>
+        <Type>USER</Type>
+        <Comment>Автомобільний міст через Нямунас у Юрбаркасі. Звідси ріка тягнеться на схід до Каунаса – це історичний край замків Панямуне; тримайтеся долини ріки.</Comment>
+        <Pos Lon="22.769996" Lat="55.069257" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Lyduvėnai Bridge</Name>
+        <Ident>LYDBR</Ident>
+        <Type>USER</Type>
+        <Comment>Лидувенайський залізничний міст через долину Дубиси – найдовший (~600 м) і найвищий (~42 м) залізничний міст Литви. Гарно виглядає з бічного прольоту на висоті ~1500 ft.</Comment>
+        <Pos Lon="23.085721" Lat="55.507495" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>The Old Zapyškis Church</Name>
+        <Ident>ZAPYS</Ident>
+        <Type>USER</Type>
+        <Comment>Стара Запишкіська церква св. Іоанна Хрестителя (1578) – червона цегляна готика на заплаві Нямунаса; навесні її часто оточує вода. До Каунаса – менше 9 NM.</Comment>
+        <Pos Lon="23.653887" Lat="54.928791" Alt="1500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kaunas PG</Name>
+        <Ident>KAUNS</Ident>
+        <Type>USER</Type>
+        <Comment>Каунас, фотограмметрія WU23 (FSPG Hangar 10/10). Злиття Нямунаса і Няріса, Старе місто, Каунаський замок. На схід – Каунаське водосховище. Аеропорт EYKA поруч: зручна точка для дозаправки або перерви, якщо ділите політ на два етапи.</Comment>
+        <Pos Lon="23.904480" Lat="54.898210" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Birštonas Observation Tower</Name>
+        <Ident>BIRST</Ident>
+        <Type>USER</Type>
+        <Comment>Бірштонаська оглядова вежа (2019) – найвища в Литві: 55 м, майданчик на 45 м. Стоїть на хребті Шкевоніс над Нямунаськими петлями – ріка тут робить кілька крутих вигинів, найкраще видно з висоти 2000–2500 ft.</Comment>
+        <Pos Lon="24.013882" Lat="54.603319" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>White Rose Bridge (Alytus)</Name>
+        <Ident>ALYTS</Ident>
+        <Type>USER</Type>
+        <Comment>Міст «Біла троянда» в Алітусі – найвищий пішохідно-велосипедний міст Литви: 38,1 м над Нямунасом, 240 м завдовжки, збудований на опорах старого залізничного мосту, відкритий 2016 р.</Comment>
+        <Pos Lon="24.081224" Lat="54.393239" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Snow Arena (Druskininkai)</Name>
+        <Ident>DRUSK</Ident>
+        <Type>USER</Type>
+        <Comment>Snow Arena – критий гірськолижний комплекс у курорті Друскінінкай: довга вигнута будівля зі схилом добре помітна з повітря. УВАГА: кордон з Білоруссю лише за кілька кілометрів на південь – одразу після точки повертайте на північний схід до Тракая.</Comment>
+        <Pos Lon="23.960432" Lat="54.031689" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Trakai Island Castle</Name>
+        <Ident>TRAKI</Ident>
+        <Type>USER</Type>
+        <Comment>Тракайський острівний замок (XIV–XV ст.) на озері Ґальве – червоний цегляний замок, резиденція великих князів литовських. Офіційний POI WU23. Порада: зробіть коло над озером на ~1500 ft.</Comment>
+        <Pos Lon="24.933803" Lat="54.652779" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Kernavė Archaeological Site</Name>
+        <Ident>KERNV</Ident>
+        <Type>USER</Type>
+        <Comment>Кернаве – об'єкт ЮНЕСКО (2004): п'ять городищ-курганів над Нярісом, середньовічна столиця Литви. Найкраще видно вздовж долини Няріса.</Comment>
+        <Pos Lon="24.847542" Lat="54.883940" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Taujėnai Manor</Name>
+        <Ident>TAUJN</Ident>
+        <Type>USER</Type>
+        <Comment>Садиба Тауєнай (Укмергський р-н) – класицистичний палац 1785 р. (арх. П'єтро де Россі), літня резиденція Радзивіллів, нині готель. Біля палацу – ландшафтний парк зі ставками.</Comment>
+        <Pos Lon="24.760133" Lat="55.396607" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>St. Matthew's Church (Anykščiai)</Name>
+        <Ident>ANYKS</Ident>
+        <Type>USER</Type>
+        <Comment>Костел св. Матвія в Анікщяй – неоготичний, з вежами ~79 м, найвищий храм Литви. Довкола – соснові ліси Анікщяйського регіонального парку.</Comment>
+        <Pos Lon="25.100974" Lat="55.523621" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Rokiškis St. Matthew Church</Name>
+        <Ident>ROKIS</Ident>
+        <Type>USER</Type>
+        <Comment>Костел св. апостола Матвія в Рокішкісі – неоготика з червоної цегли (кінець XIX ст.), поряд з Рокішкіською садибою. Найпівнічніша точка маршруту: латвійський кордон за ~15 км.</Comment>
+        <Pos Lon="25.583497" Lat="55.964060" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Church of Our Lady of Sorrows</Name>
+        <Ident>SALAK</Ident>
+        <Type>USER</Type>
+        <Comment>Костел Скорботної Богоматері в Салакасі (1911) – кам'яний храм у неороманському стилі заввишки 72 м серед озер Зарасайського краю. Далі довгий перегін ~61 NM на південний захід до Вільнюса; кордон з Білоруссю – на південь, тримайтеся північніше.</Comment>
+        <Pos Lon="26.140383" Lat="55.583645" Alt="2000.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Vilnius PG</Name>
+        <Ident>VILNS</Ident>
+        <Type>USER</Type>
+        <Comment>Вільнюс, фотограмметрія WU23 (FSPG Hangar 10/10): Старе місто (ЮНЕСКО), долина Няріса, деталізована ТЕЦ. Аеропорт EYVI – одразу на південь від центру, тож узгоджуйте висоту з його зоною.</Comment>
+        <Pos Lon="25.279800" Lat="54.689160" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Vilnius TV Tower</Name>
+        <Ident>VNOTV</Ident>
+        <Type>USER</Type>
+        <Comment>Вільнюська телевежа – 326,5 м, найвища споруда Литви; місце подій 13 січня 1991 р. ПЕРЕШКОДА: верхівка ~1 700 ft MSL – не опускайтеся нижче 2500 ft поруч або обходьте збоку. Далі – захід на EYVI.</Comment>
+        <Pos Lon="25.214432" Lat="54.687246" Alt="2500.00"/>
+      </Waypoint>
+      <Waypoint>
+        <Name>Vilnius International</Name>
+        <Ident>EYVI</Ident>
+        <Type>AIRPORT</Type>
+        <Comment>Фініш. Міжнародний аеропорт Вільнюса, перевищення 646 ft, ЗПС 01/19.</Comment>
+        <Pos Lon="25.285833" Lat="54.634167" Alt="646.00"/>
+      </Waypoint>
+    </Waypoints>
+  </Flightplan>
+</LittleNavmap>
