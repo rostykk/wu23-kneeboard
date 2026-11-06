@@ -76,6 +76,10 @@ h2{margin:0 0 10px;font-family:var(--display);font-size:17px;font-weight:600;let
 .field input:focus,td input:focus{border-color:var(--apt);outline:none}
 .inline{display:flex;gap:6px}
 .field .lbl{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+td.rem{color:var(--muted)}
+.nav .rem b{color:var(--route)}
+td small.slow{display:block;font-size:11.5px;color:var(--route);font-weight:600}
+.field input:disabled{opacity:.45}
 .seg{display:flex;border:1.5px solid var(--rule);border-radius:6px;overflow:hidden;min-height:40px;background:var(--field)}
 .seg button{flex:1;font:700 16px var(--mono);color:var(--muted);background:transparent;border:0;border-left:1.5px solid var(--rule);cursor:pointer;padding:0 6px}
 .seg button:first-child{border-left:0}
@@ -167,6 +171,13 @@ tr.cur.dr td{color:var(--ink)}
     <div class="field"><label for="taxi">Руління</label><input id="taxi" inputmode="decimal" placeholder="75"></div>
     <div class="field"><label for="reserve">Резерв (АНЗ)</label><input id="reserve" inputmode="decimal" placeholder="551"></div>
     <div class="field"><label for="cont">Непередбачене, %</label><input id="cont" inputmode="decimal" placeholder="5"></div>
+    <div class="field slowf" style="grid-column:1/-1"><span class="lbl">На точках огляду</span>
+      <label class="chk" style="min-height:40px"><input type="checkbox" id="slowOn" checked> Сповільнюватись біля кожної точки огляду (міста PG, обходи й аеропорти — без сповільнення)</label></div>
+    <div class="field slowf"><label for="stas">TAS на точках, kt</label><input id="stas" inputmode="numeric" placeholder="110"></div>
+    <div class="field slowf"><label for="sbef">Гальмувати за, NM</label><input id="sbef" inputmode="decimal" placeholder="3"></div>
+    <div class="field slowf"><label for="saft">Розгін після, NM</label><input id="saft" inputmode="decimal" placeholder="1"></div>
+    <div class="field slowf"><label for="orbit">Коло над точкою, хв</label><input id="orbit" inputmode="decimal" placeholder="0"></div>
+    <div class="field slowf"><label for="ffs">Витрата на точках</label><input id="ffs" inputmode="decimal" placeholder="= крейсерська"></div>
   </div>
   <div class="fuelplan" id="fuelPlan"></div>
   <div class="plan-actions">
@@ -175,14 +186,14 @@ tr.cur.dr td{color:var(--ink)}
     <button class="small-btn" id="resetBtn" type="button">Скинути фактичні дані</button>
     <button class="small-btn" id="perfBtn" type="button">Повернути профіль Ан-28</button>
   </div>
-  <p class="plan-note" id="planNote">Значення за замовчуванням — з вашого An-28_ATSimulations.lnmperf (РЛЕ Ан-28, 6000–6400 кг). Вітер «звідки» — як у METAR. Магнітне схилення по кожному відрізку вже враховане (WMM 2025). Вітер для окремого відрізка можна задати в nav log — він має пріоритет над загальним.</p>
+  <p class="plan-note" id="planNote">Значення за замовчуванням — з вашого An-28_ATSimulations.lnmperf (РЛЕ Ан-28, 6000–6400 кг). Вітер «звідки» — як у METAR. Магнітне схилення по кожному відрізку вже враховане (WMM 2025). Вітер для окремого відрізка можна задати в nav log — він має пріоритет над загальним. Сповільнення: останні «Гальмувати за» NM перед точкою огляду й перші «Розгін після» NM за нею — на швидкості точки (у колонці GS — рожеве ↓). Порожня «Витрата на точках» = крейсерська, тобто паливо з запасом.</p>
 </section>
 
 <section class="card log"><h2>VFR NAV LOG</h2>
   <table>
     <thead><tr>
       <th>#</th><th>ТОЧКА</th><th class="n">ALT</th><th class="n">TC</th><th>ВІТЕР °/kt</th><th class="n">WCA</th><th class="n">TH</th><th class="n">VAR</th><th class="n">MH</th>
-      <th class="n">NM</th><th class="n">GS</th><th class="n">ETE</th><th class="n">ETA</th><th>ATA</th><th class="n">ФАКТ GS</th><th class="n">ПАЛИВО</th>
+      <th class="n">NM</th><th class="n">GS</th><th class="n">ETE</th><th class="n" title="Сума ETE від цієї точки до фінішу">ЗАЛИШ.</th><th class="n">ETA</th><th>ATA</th><th class="n">ФАКТ GS</th><th class="n">ПАЛИВО</th>
     </tr></thead>
     <tbody id="log"></tbody>
   </table>
@@ -204,10 +215,10 @@ const PERF = {name:"An-28 ATSimulations (Local Legend) · .lnmperf", usable:3351
          {id:"nom",   label:"Номінал · 190 kt · 895 lb/h", tas:190, ff:895, limit:60},
          {id:"range", label:"Макс. дальність · 166 kt · 672 lb/h", tas:166, ff:672}]};
 const UNIT = {lb:1, kg:0.45359237, gal:1/6.7};   // per lb; jet fuel 6.7 lb/US gal
-function blank(){ return {idx:0, mode:"maxcr", tas:"182", wdir:"", wspd:"", atd:"", fob:"3351", maxf:"3351", ff:"829", unit:"lb", reserve:"551", taxi:"75", cont:"5", auto:true, legs:{}, ata:{}}; }
+function blank(){ return {idx:0, mode:"maxcr", tas:"182", wdir:"", wspd:"", atd:"", fob:"3351", maxf:"3351", ff:"829", unit:"lb", reserve:"551", taxi:"75", cont:"5", slowOn:true, stas:"110", sbef:"3", saft:"1", orbit:"0", ffs:"", auto:true, legs:{}, ata:{}}; }
 function prefUnit(){ try { const u=localStorage.getItem(KEY+"unit"); return UNIT[u] ? u : "lb"; } catch(e){ return "lb"; } }
 function convertTo(o,u){ if(o.unit===u) return o; const k=UNIT[u]/UNIT[o.unit];
-  ["fob","maxf","ff","taxi","reserve"].forEach(x=>{ const v=num(o[x]); if(v!==null) o[x]=String(Math.round(v*k)); }); o.unit=u; return o; }
+  ["fob","maxf","ff","ffs","taxi","reserve"].forEach(x=>{ const v=num(o[x]); if(v!==null) o[x]=String(Math.round(v*k)); }); o.unit=u; return o; }
 function load(id){ try { const v = JSON.parse(localStorage.getItem(KEY+id)); return Object.assign(blank(), v || {}); } catch(e){ return blank(); } }
 function save(){ try { localStorage.setItem(KEY+FLIGHTS[fi].id, JSON.stringify(st)); } catch(e){} }
 function esc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
@@ -218,20 +229,37 @@ function nowT(){ const d=new Date(); return String(d.getHours()).padStart(2,"0")
 function fmtCoord(lat,lon){ const f=(v,p,n)=>{const a=Math.abs(v),d=Math.floor(a),m=(a-d)*60;return (v>=0?p:n)+d+"°"+m.toFixed(2).padStart(5,"0")+"′";}; return f(lat,"N","S")+" "+f(lon,"E","W"); }
 
 /* E6B: wind triangle for each leg, then times and fuel */
+/* a sightseeing point: user waypoint that is not a PG city and not an airspace bypass */
+function hm(m){ if(m===null||m===undefined||!isFinite(m)) return "—"; m=Math.round(m); return Math.floor(m/60)+":"+String(m%60).padStart(2,"0"); }
+function isPoi(p){ return p.type==="USER" && !/ PG$/.test(p.name) && !/^Обхід/.test(p.name); }
+function tri(tc, tas, wd, ws){ // wind triangle → {wca, gs, ok}
+  let wca = 0, gs = tas, ok = true;
+  if (wd !== null && ws > 0){
+    const rel = (wd - tc) * Math.PI/180, x = ws*Math.sin(rel)/tas;
+    if (Math.abs(x) >= 1) ok = false; else { wca = Math.asin(x)*180/Math.PI; gs = tas*Math.cos(wca*Math.PI/180) - ws*Math.cos(rel); }
+  }
+  if (gs < 20) ok = false;
+  return {wca, gs, ok};
+}
 function compute(f){
   const tas = num(st.tas) || 180;
+  const slowOn = !!st.slowOn, stas = num(st.stas) || 110, sbef = Math.max(0, num(st.sbef) ?? 3), saft = Math.max(0, num(st.saft) ?? 1), orbit = Math.max(0, num(st.orbit) ?? 0);
+  const ff = num(st.ff), ffs = num(st.ffs) ?? ff;
   const legs = f.legs.map((l,i)=>{
     const o = st.legs[i+1] || {};
     const wd = num(o.wd ?? "") ?? num(st.wdir), ws = num(o.ws ?? "") ?? num(st.wspd) ?? 0;
     const varE = norm(l.tc - l.mc + 180) - 180;
-    let wca = 0, gs = tas, ok = true;
-    if (wd !== null && ws > 0){
-      const rel = (wd - l.tc) * Math.PI/180, x = ws*Math.sin(rel)/tas;
-      if (Math.abs(x) >= 1) ok = false; else { wca = Math.asin(x)*180/Math.PI; gs = tas*Math.cos(wca*Math.PI/180) - ws*Math.cos(rel); }
-    }
-    if (gs < 20) ok = false;
-    const th = norm(l.tc + wca), mh = norm(th - varE), ete = ok ? l.nm/gs*60 : null;
-    return {tc:l.tc, nm:l.nm, wd, ws, wca, th, varE, mh, gs, ete, ok, own: o.wd!==undefined && o.wd!=="" };
+    const A = f.points[i], B = f.points[i+1];
+    const sEnd = slowOn && isPoi(B) ? Math.min(sbef, l.nm) : 0;
+    const sStart = slowOn && isPoi(A) ? Math.min(saft, l.nm - sEnd) : 0;
+    const slowNm = sEnd + sStart, fastNm = l.nm - slowNm, orb = slowOn && isPoi(B) ? orbit : 0;
+    const F = tri(l.tc, tas, wd, ws), S = tri(l.tc, stas, wd, ws);
+    const ok = F.ok && (slowNm === 0 || S.ok);
+    const fastMin = ok ? fastNm/F.gs*60 : null, slowMin = ok ? (slowNm ? slowNm/S.gs*60 : 0) + orb : null;
+    const ete = ok ? fastMin + slowMin : null;
+    const burn = (ok && ff !== null) ? ff*fastMin/60 + (ffs ?? ff)*slowMin/60 : null;
+    const th = norm(l.tc + F.wca), mh = norm(th - varE);
+    return {tc:l.tc, nm:l.nm, wd, ws, wca:F.wca, th, varE, mh, gs:F.gs, sgs: slowNm ? S.gs : null, slowNm, orb, ete, burn, ok, own: o.wd!==undefined && o.wd!=="" };
   });
   const atd = parseT(st.atd), n = f.points.length;
   const ata = f.points.map((_,i)=> i===0 ? atd : parseT(st.ata[i]));
@@ -243,21 +271,23 @@ function compute(f){
     eta[i] = (prev !== null && legs[i-1].ete !== null) ? prev + legs[i-1].ete : null;
     if (ata[i]!==null && ata[i-1]!==null && ata[i] > ata[i-1]) actGs[i] = legs[i-1].nm / ((ata[i]-ata[i-1])/60);
   }
-  const maxf = num(st.maxf), fobIn = num(st.fob), ff = num(st.ff), taxi = num(st.taxi) || 0;
+  const maxf = num(st.maxf), fobIn = num(st.fob), taxi = num(st.taxi) || 0;
   const capped = fobIn !== null && maxf !== null && fobIn > maxf;
   const fob0 = capped ? maxf : fobIn;
   const fob = fob0 === null ? null : fob0 - taxi;
   const fuel = new Array(n).fill(null);
   if (fob !== null && ff !== null){
-    let planT = 0;
+    // planned burn per point; with real times, scale by the plan's average rate so far
+    let planT = 0, planB = 0;
     for(let i=0;i<n;i++){
-      if (i>0) planT += legs[i-1].ete ?? 0;
-      const t = (atd!==null && ata[i]!==null) ? ata[i]-atd : (atd!==null && eta[i]!==null ? eta[i]-atd : planT);
-      fuel[i] = fob - ff * t/60;
+      if (i>0){ planT += legs[i-1].ete ?? 0; planB += legs[i-1].burn ?? 0; }
+      const rate = planT > 0 ? planB/planT : ff/60;
+      const t = (atd!==null && ata[i]!==null) ? ata[i]-atd : (atd!==null && eta[i]!==null ? eta[i]-atd : null);
+      fuel[i] = fob - (t !== null ? rate*t : planB);
     }
   }
   const totMin = legs.reduce((s,l)=>s+(l.ete??0),0);
-  const trip = ff !== null ? ff*totMin/60 : null, cont = trip !== null ? trip*(num(st.cont)||0)/100 : null;
+  const trip = ff !== null ? legs.reduce((s,l)=>s+(l.burn??0),0) : null, cont = trip !== null ? trip*(num(st.cont)||0)/100 : null;
   const reserve = num(st.reserve) || 0;
   const req = trip !== null ? taxi + trip + cont + reserve : null;
   return {legs, ata, eta, actGs, fuel, totMin, tas, plan:{taxi, trip, cont, reserve, req, fob:fob0, capped, maxf, room: (maxf!==null && fob0!==null) ? maxf-fob0 : null, extra: (req!==null && fob0!==null) ? fob0-req : null}};
@@ -296,13 +326,13 @@ function render(){
   const tm = Math.round(R.totMin);
   $("summary").innerHTML = `<span class="route">${esc(f.route)}</span>
     <span class="stat"><b>${f.total}</b><span>NM</span></span>
-    <span class="stat"><b>${Math.floor(tm/60)}:${String(tm%60).padStart(2,"0")}</b><span>у польоті при TAS ${R.tas} kt${(num(st.wspd)||0)>0?" з вітром":""}</span></span>
+    <span class="stat"><b>${Math.floor(tm/60)}:${String(tm%60).padStart(2,"0")}</b><span>у польоті при TAS ${R.tas} kt${st.slowOn?", на точках "+(num(st.stas)||110)+" kt":""}${(num(st.wspd)||0)>0?" з вітром":""}</span></span>
     <span class="stat"><b>${f.maxalt}</b><span>ft макс. висота</span></span>
     ${R.fuel[last]!==null?`<span class="stat"><b class="${R.fuel[last]<0?'late':''}">${fuelTxt(R.fuel[last])}</b><span>паливо на посадці</span></span>`:""}`;
   $("stepTxt").textContent = idx===0 ? "Старт" : (idx===last ? "Фініш" : `Точка ${idx} з ${last-1}`);
   const remNm = f.total - (idx>0 ? f.legs[idx-1].cum : 0);
   const remMin = R.legs.slice(idx).reduce((s,l)=>s+(l.ete??0),0);
-  $("stepEta").textContent = idx===last ? "маршрут завершено" : `залишилось ${remNm} NM · ${Math.round(remMin)} хв`;
+  $("stepEta").textContent = idx===last ? "маршрут завершено" : `залишилось ${remNm} NM · ${hm(remMin)}`;
   $("bar").style.width = (idx/last*100).toFixed(1)+"%";
   const p = pts[idx];
   $("curIdent").textContent = p.ident; $("curIdent").className = "cur-ident"+(p.type==="AIRPORT"?" apt":"");
@@ -314,19 +344,20 @@ function render(){
   const windTxt = (L.wd!==null && L.ws>0) ? `вітер ${pad3(L.wd)}°/${Math.round(L.ws)} kt` : "без вітру";
   $("navBox").innerHTML = `<div><span>курс MH</span><b>${pad3(L.mh)}°</b><small>TC ${pad3(L.tc)}° · WCA ${L.wca>=0?"+":""}${L.wca.toFixed(0)}°</small></div>
     <div><span>відстань</span><b>${L.nm}</b><small>NM · ${idx===0?"до "+pts[1].ident:"від "+pts[idx-1].ident}</small></div>
-    <div><span>GS · ETE</span><b>${L.ok?Math.round(L.gs):"—"}</b><small>${L.ok?Math.round(L.ete)+" хв · ":""}${windTxt}</small></div>
+    <div><span>GS · ETE</span><b>${L.ok?Math.round(L.gs):"—"}</b><small>${L.ok?Math.round(L.ete)+" хв · ":""}${L.sgs?"на точці "+Math.round(L.sgs)+" · ":""}${windTxt}</small></div>
     <div><span>висота</span><b>${p.alt ?? (idx===0 ? pts[1].alt : "—")}</b><small>ft MSL</small></div>
     <div class="${diff.startsWith("+")?"late":(diff.startsWith("-")?"early":"")}"><span>ETA ${esc(pts[tgt].ident)}</span><b>${fmtT(etaV)||"—"}</b><small>${ataV!==null?"ATA "+fmtT(ataV)+" · "+diff:(st.atd?"":"введіть ATD")}</small></div>
     <div><span>паливо</span><b>${R.fuel[tgt]!==null?Math.round(R.fuel[tgt]):"—"}</b><small>${R.fuel[tgt]!==null?(st.unit==="gal"?"gal":st.unit)+" на "+esc(pts[tgt].ident):"введіть паливо"}</small></div>
     <div><span>факт GS</span><b>${R.actGs[tgt]!==null?Math.round(R.actGs[tgt]):"—"}</b><small>kt за ATA</small></div>
-    <div><span>TAS</span><b>${R.tas}</b><small>kt</small></div>`;
+    <div class="rem"><span>до фінішу</span><b>${idx===last?"0:00":hm(remMin)}</b><small>${remNm} NM · ETA ${esc(pts[last].ident)} ${fmtT(R.eta[last])||"—"}</small></div>`;
   $("curDesc").textContent = p.desc || "";
   $("curCoords").textContent = fmtCoord(p.lat,p.lon);
   $("prevBtn").disabled = idx===0; $("nextBtn").disabled = idx===last;
   $("nextBtn").textContent = idx===0 ? "Зліт, далі →" : (idx===last-1 ? "Пройдено, на посадку →" : "Пройдено, далі →");
   $("sketch").innerHTML = sketch(f);
   $("notes").innerHTML = f.notes.map(n=>`<li>${esc(n)}</li>`).join("");
-  ["tas","wdir","wspd","atd","fob","maxf","ff","taxi","reserve","cont"].forEach(k=>{ if(document.activeElement!==$(k)) $(k).value = st[k] ?? ""; });
+  $("slowOn").checked = !!st.slowOn; document.querySelectorAll(".slowf input:not([type=checkbox])").forEach(e=>e.disabled=!st.slowOn);
+  ["tas","wdir","wspd","atd","fob","maxf","ff","taxi","reserve","cont","stas","sbef","saft","orbit","ffs"].forEach(k=>{ if(document.activeElement!==$(k)) $(k).value = st[k] ?? ""; });
   const uu = st.unit==="gal"?"gal":st.unit;
   $("mode").innerHTML = PERF.modes.map(m=>`<option value="${m.id}">${m.label.split(" · ")[0]} · ${m.tas} kt · ${Math.round(m.ff*UNIT[st.unit])} ${uu}/h${m.limit?" · ≤"+m.limit+" хв":""}</option>`).join("") + `<option value="custom">Свої значення</option>`;
   $("mode").value = st.mode || "custom";
@@ -357,11 +388,12 @@ function render(){
       <td class="n">${l?(l.wca>=0?"+":"")+l.wca.toFixed(0)+"°":""}</td><td class="n">${l?pad3(l.th)+"°":""}</td>
       <td class="n">${l?(l.varE>=0?l.varE.toFixed(0)+"E":(-l.varE).toFixed(0)+"W"):""}</td>
       <td class="n mh">${l?pad3(l.mh)+"°":""}</td>
-      <td class="n">${l?l.nm:""}</td><td class="n">${l?(l.ok?Math.round(l.gs):"—"):""}</td><td class="n">${l?(l.ok?Math.round(l.ete):"—"):""}</td>
+      <td class="n">${l?l.nm:""}</td><td class="n">${l?(l.ok?Math.round(l.gs)+(l.sgs?`<small class="slow" title="${l.slowNm.toFixed(1)} NM на швидкості точки${l.orb?" + коло "+l.orb+" хв":""}">↓${Math.round(l.sgs)}</small>`:""):"—"):""}</td><td class="n">${l?(l.ok?Math.round(l.ete):"—"):""}</td>
+      <td class="n rem">${i===pts.length-1?"":hm(R.legs.slice(i).reduce((s,x)=>s+(x.ete??0),0))}</td>
       <td class="n">${fmtT(R.eta[i])}</td><td>${ataCell}</td>
       <td class="n ${etaD>0?'late':(etaD<0?'early':'')}">${R.actGs[i]!==null?Math.round(R.actGs[i]):""}</td>
       <td class="n ${R.fuel[i]!==null&&R.fuel[i]<0?'late':''}">${R.fuel[i]!==null?Math.round(R.fuel[i]):""}</td></tr>
-      <tr class="dr ${cls}"><td></td><td colspan="15"><b>${esc(pt.name)}</b>${pt.desc?" — "+esc(pt.desc):""}</td></tr>`; }).join("");
+      <tr class="dr ${cls}"><td></td><td colspan="16"><b>${esc(pt.name)}</b>${pt.desc?" — "+esc(pt.desc):""}</td></tr>`; }).join("");
   $("log").querySelectorAll("tr.pt").forEach(r=>{
     const go=e=>{ if(e.target.closest("input")) return; st.idx=+r.dataset.i; save(); render(); };
     r.addEventListener("click",go); r.addEventListener("keydown",e=>{ if((e.key==="Enter"||e.key===" ") && !e.target.closest("input")){ e.preventDefault(); go(e); } }); });
@@ -378,7 +410,8 @@ function step(d){
   if(d>0 && st.auto && st.idx>0 && !st.ata[st.idx]) st.ata[st.idx]=nowT();
   st.idx=n; save(); render();
 }
-["tas","wdir","wspd","atd","fob","maxf","ff","taxi","reserve","cont"].forEach(k=>$(k).addEventListener("change",()=>{ st[k]=$(k).value.trim(); if(k==="tas"||k==="ff") st.mode="custom"; save(); render(); }));
+$("slowOn").addEventListener("change",()=>{ st.slowOn=$("slowOn").checked; save(); render(); });
+["tas","wdir","wspd","atd","fob","maxf","ff","taxi","reserve","cont","stas","sbef","saft","orbit","ffs"].forEach(k=>$(k).addEventListener("change",()=>{ st[k]=$(k).value.trim(); if(k==="tas"||k==="ff") st.mode="custom"; save(); render(); }));
 $("mode").addEventListener("change",()=>{ const m=PERF.modes.find(x=>x.id===$("mode").value); st.mode=$("mode").value;
   if(m){ st.tas=String(m.tas); st.ff=String(Math.round(m.ff*UNIT[st.unit])); } save(); render(); });
 document.querySelectorAll("#unitSeg button").forEach(b=>b.addEventListener("click",()=>{
